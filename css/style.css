@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #eaeaea;
+}
+
+header {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+header h1 img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+nav ul li .btn-english {
+    padding: 5px 10px;
+    background: #ffc107;
+    border-radius: 5px;
+    color: #2c2c2c;
+    font-size: 14px;
+}
+
+main .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #fff;
+}
+
+.project-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-items li {
+    flex: 1 1 calc(33.333% - 20px);
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 15px;
+    color: #eaeaea;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-items li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-items img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #2c2c2c;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.team {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.team li {
+    flex: 1 1 calc(33.333% - 20px);
+    text-align: center;
+	list-style-type:none
+}
+
+.team img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 链接的默认样式 */
+a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* 鼠标悬停时 */
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107;
+}
+
+/* 访问过的链接 */
+/* a:visited {
+    color: #d4a017;
+} */
+
+/* 活动状态时 */
+a:active {
+    color: #ff5722;
+    text-shadow: none;
+}
