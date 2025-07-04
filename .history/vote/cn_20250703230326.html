@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025年EYA制作组附属工作室管理员选举站点</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            /* background: #007bff; */
+            background: #ffc107;
+            color: #000000;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #c29307;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <img src="../img/logo.png" alt="EYA Logo"> Enlist Your Army 制作组
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="../cn.html/#about">关于</a></li>
+                    <li><a href="../cn.html/#project">作品</a></li>
+                    <li><a href="../cn.html/#contact">联系</a></li>
+                    <li><a href="./en.html" class="btn-english">English</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+        <!-- <h2>2025年EYA制作组附属工作室管理员选举站点</h2> -->
+
+        <div class="section">
+            <h2>选择一位室长候选人（一位）：</h2>
+            <form id="form1">
+                <label><input type="radio" name="leader" value="Arch拱门"> Arch拱门</label><br>
+                <label><input type="radio" name="leader" value="Aero"> Aero</label><br>
+                <label><input type="radio" name="leader" value="浮生若梦"> 浮生若梦</label><br>
+                <label><input type="radio" name="leader" value="KR酷燃"> KR酷燃</label><br>
+                <label><input type="radio" name="leader" value="Operate"> Operate</label><br>
+                <label><input type="radio" name="leader" value="TXTTXT"> TXTTXT</label><br>
+                <label><input type="radio" name="leader" value="P姐"> P姐</label><br>
+                <label><input type="radio" name="leader" value="萨摩耶"> 萨摩耶</label>
+            </form>
+        </div>
+
+        <!-- 第二部分：网页管理员候选人 -->
+        <div class="section">
+            <h2>选择一位网页管理员候选人（一位）：</h2>
+            <form id="form2">
+                <label><input type="radio" name="webadmin" value="萨摩耶"> 萨摩耶</label><br>
+                <label><input type="radio" name="webadmin" value="Aero"> Aero</label>
+            </form>
+        </div>
+
+        <!-- 第三部分：管理员候选人 -->
+        <div class="section">
+            <h2>选择管理员候选人（5位）：</h2>
+            <form id="form3">
+                <label><input type="checkbox" name="admin" value="@Samoyed~"> @Samoyed~</label><br>
+                <label><input type="checkbox" name="admin" value="@Arch拱门"> @Arch拱门</label><br>
+                <label><input type="checkbox" name="admin" value="@KR酷燃"> @KR酷燃</label><br>
+                <label><input type="checkbox" name="admin" value="@姜"> @姜</label><br>
+                <label><input type="checkbox" name="admin" value="@P姐"> @P姐</label><br>
+                <label><input type="checkbox" name="admin" value="@TXTTXT"> @TXTTXT</label><br>
+                <label><input type="checkbox" name="admin" value="@BC北辰"> @BC北辰</label><br>
+                <label><input type="checkbox" name="admin" value="@Aero"> @Aero</label><br>
+                <label><input type="checkbox" name="admin" value="@浮生若梦"> @浮生若梦</label><br>
+                <label><input type="checkbox" name="admin" value="@地铁5号线"> @地铁5号线</label><br>
+                <label><input type="checkbox" name="admin" value="@Fragility"> @Fragility</label><br>
+                <label><input type="checkbox" name="admin" value="@HAHA"> @HAHA</label><br>
+                <label><input type="checkbox" name="admin" value="@HexaDecagon"> @HexaDecagon</label><br>
+                <label><input type="checkbox" name="admin" value="@Operate"> @Operate</label><br>
+                <label><input type="checkbox" name="admin" value="@Player"> @Player</label><br>
+                <label><input type="checkbox" name="admin" value="@清枫"> @清枫</label><br>
+                <label><input type="checkbox" name="admin" value="@Vanco"> @Vanco</label><br>
+                <label><input type="checkbox" name="admin" value="@熊猫"> @熊猫</label><br>
+                <label><input type="checkbox" name="admin" value="@屑名氏"> @屑名氏</label><br>
+                <label><input type="checkbox" name="admin" value="@飞猪"> @飞猪</label>
+            </form>
+        </div>
+
+        <button class="button" onclick="submitVote()">提交投票</button>
+    </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2022-2024 EYA制作组。版权所有。</p>
+        </div>
+    </footer>
+ <script>
+        function submitVote() {
+    const leader = document.querySelector('input[name="leader"]:checked');
+    const webadmin = document.querySelector('input[name="webadmin"]:checked');
+    const admins = document.querySelectorAll('input[name="admin"]:checked');
+
+    if (!leader) {
+        alert('请选择一位室长候选人！');
+        return;
+    }
+
+    if (!webadmin) {
+        alert('请选择一位网页管理员候选人！');
+        return;
+    }
+
+    if (admins.length !== 5) {
+        alert('请选择 5 位管理员候选人！');
+        return;
+    }
+
+    const selectedAdmins = Array.from(admins).map(admin => admin.value);
+
+    const data = {
+        leader: leader.value,
+        webadmin: webadmin.value,
+        admins: selectedAdmins
+    };
+
+    fetch('https://response.acsstudio.site/submit_vote', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('投票提交失败');
+        }
+        return response.json();
+    })
+    .then(result => {
+        alert(result.message);
+    })
+    .catch(error => {
+        console.error('提交错误:', error);
+        alert('提交失败，请稍后再试！');
+    });
+}
+
+    </script>
+
+</body>
+</html>

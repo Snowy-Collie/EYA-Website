@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 EYA Production Team Affiliated Studio Administrator Election Site</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            /* background: #007bff; */
+            background: #ffc107;
+            color: #000000;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #c29307;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <img src="https://eyastudio.us.kg/img/logo.png" alt="EYA Logo"> Enlist Your Army Production Team
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="https://eyastudio.us.kg/cn.html/#about">About</a></li>
+                    <li><a href="https://eyastudio.us.kg/cn.html/#project">Projects</a></li>
+                    <li><a href="https://eyastudio.us.kg/cn.html/#contact">Contact</a></li>
+                    <li><a href="./cn.html" class="btn-english">中文（大陆）</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+        <!-- <h2>2025年EYA制作组附属工作室管理员选举站点</h2> -->
+
+        <div class="section">
+            <h2>Select one candidate for Director:</h2>
+            <form id="form1">
+                <label><input type="radio" name="leader" value="Arch拱门"> Arch拱门</label><br>
+                <label><input type="radio" name="leader" value="Aero"> Aero</label><br>
+                <label><input type="radio" name="leader" value="浮生若梦"> 浮生若梦</label><br>
+                <label><input type="radio" name="leader" value="KR酷燃"> KR酷燃</label><br>
+                <label><input type="radio" name="leader" value="Operate"> Operate</label><br>
+                <label><input type="radio" name="leader" value="TXTTXT"> TXTTXT</label><br>
+                <label><input type="radio" name="leader" value="P姐"> P姐</label><br>
+                <label><input type="radio" name="leader" value="萨摩耶"> 萨摩耶</label>
+            </form>
+        </div>
+
+        <!-- 第二部分：网页管理员候选人 -->
+        <div class="section">
+            <h2>Select one candidate for webmaster:</h2>
+            <form id="form2">
+                <label><input type="radio" name="webadmin" value="萨摩耶"> 萨摩耶</label><br>
+                <label><input type="radio" name="webadmin" value="Aero"> Aero</label>
+            </form>
+        </div>
+
+        <!-- 第三部分：管理员候选人 -->
+        <div class="section">
+            <h2>Select administrator candidates (5 candidates):</h2>
+            <form id="form3">
+                <label><input type="checkbox" name="admin" value="@Samoyed~"> @Samoyed~</label><br>
+                <label><input type="checkbox" name="admin" value="@Arch拱门"> @Arch拱门</label><br>
+                <label><input type="checkbox" name="admin" value="@KR酷燃"> @KR酷燃</label><br>
+                <label><input type="checkbox" name="admin" value="@姜"> @姜</label><br>
+                <label><input type="checkbox" name="admin" value="@P姐"> @P姐</label><br>
+                <label><input type="checkbox" name="admin" value="@TXTTXT"> @TXTTXT</label><br>
+                <label><input type="checkbox" name="admin" value="@BC北辰"> @BC北辰</label><br>
+                <label><input type="checkbox" name="admin" value="@Aero"> @Aero</label><br>
+                <label><input type="checkbox" name="admin" value="@浮生若梦"> @浮生若梦</label><br>
+                <label><input type="checkbox" name="admin" value="@地铁5号线"> @地铁5号线</label><br>
+                <label><input type="checkbox" name="admin" value="@Fragility"> @Fragility</label><br>
+                <label><input type="checkbox" name="admin" value="@HAHA"> @HAHA</label><br>
+                <label><input type="checkbox" name="admin" value="@HexaDecagon"> @HexaDecagon</label><br>
+                <label><input type="checkbox" name="admin" value="@Operate"> @Operate</label><br>
+                <label><input type="checkbox" name="admin" value="@Player"> @Player</label><br>
+                <label><input type="checkbox" name="admin" value="@清枫"> @清枫</label><br>
+                <label><input type="checkbox" name="admin" value="@Vanco"> @Vanco</label><br>
+                <label><input type="checkbox" name="admin" value="@熊猫"> @熊猫</label><br>
+                <label><input type="checkbox" name="admin" value="@屑名氏"> @屑名氏</label><br>
+                <label><input type="checkbox" name="admin" value="@飞猪"> @飞猪</label>
+            </form>
+        </div>
+
+        <button class="button" onclick="submitVote()">Submit vote</button>
+    </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2022-2024 EYA Productions. All rights reserved.</p>
+        </div>
+    </footer>
+ <script>
+        function submitVote() {
+    const leader = document.querySelector('input[name="leader"]:checked');
+    const webadmin = document.querySelector('input[name="webadmin"]:checked');
+    const admins = document.querySelectorAll('input[name="admin"]:checked');
+
+    if (!leader) {
+        alert('Please select a candidate for Director!');
+        return;
+    }
+
+    if (!webadmin) {
+        alert('Please select a webmaster candidate!');
+        return;
+    }
+
+    if (admins.length !== 5) {
+        alert('Please select 5 administrator candidates!');
+        return;
+    }
+
+    const selectedAdmins = Array.from(admins).map(admin => admin.value);
+
+    const data = {
+        leader: leader.value,
+        webadmin: webadmin.value,
+        admins: selectedAdmins
+    };
+
+    fetch('https://www.acsstudio.us.kg/submit_vote', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Voting submission failed');
+        }
+        return response.json();
+    })
+    .then(result => {
+        alert(result.message);
+    })
+    .catch(error => {
+        console.error('Error submitting:', error);
+        alert('Submission failed, please try again later!');
+    });
+}
+
+    </script>
+
+</body>
+</html>
